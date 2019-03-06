@@ -3,25 +3,28 @@ import './App.css';
 import Header from './components/Header';
 import Posts from './containers/Posts';
 
-const posts = [
-  {
-    name: "Lekan",
-    img_url: "https://miro.medium.com/fit/c/240/240/0*Bzq1yatMKbNzHTm0.jpg",
-    comment: "First post"
-  },
-  {
-    name: "Lekan",
-    img_url: "http://abchoopsnyc.com/images/s15_fall14/wkd/s15c_wk10a_9pm_9.jpg",
-    comment: "Second post"
-  }
-]
-
 class App extends Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      posts: []
+    }
+  }
+
+  componentDidMount() {
+      fetch('http://localhost:3001/api/posts')
+        .then(response => response.json())
+        .then(posts => this.setState({ posts }))
+  }
+
   render() {
+
+    console.log(this.state)
     return <div className="App">
         <Header />
-        App Container
-        <Posts posts={posts}/>
+        <Posts posts={this.state.posts}/>
       </div>;
 
   }
