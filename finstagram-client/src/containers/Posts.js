@@ -2,10 +2,10 @@ import React from 'react';
 import './Post.css';
 
 const Posts = (props) => (
-  <div>
+  <div className="PostsContainer">
     <h1>Posts</h1>
     {props.posts.map(post =>
-      <div class="PostCard">
+      <div key={post.id} className="PostCard">
         <h4>{post.name}</h4>
         <img src={post.img_url} alt={post.name} />
         <p>Comment: {post.comment}</p>
