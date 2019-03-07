@@ -5,7 +5,7 @@ import './Post.css';
 const Posts = (props) => (
   <div className="PostsContainer">
     <h1>Posts</h1>
-    {props.posts.map(post => <PostCard post={post} />)}
+    {props.posts.map(post => <PostCard key={post.id} post={post} />)}
   </div>
 );
 
