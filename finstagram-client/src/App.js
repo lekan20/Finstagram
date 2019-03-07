@@ -3,6 +3,8 @@ import './App.css';
 import Header from './components/Header';
 import Posts from './containers/Posts';
 
+const API_URL = process.env.REACT_APP_API_URL
+
 class App extends Component {
 
   constructor(props) {
@@ -14,7 +16,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-      fetch('http://localhost:3001/api/posts')
+      fetch(`${API_URL}/posts`)
         .then(response => response.json())
         .then(posts => this.setState({ posts }))
   }
