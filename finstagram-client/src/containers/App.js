@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './components/Header';
-import Posts from './containers/Posts';
+import Header from '../components/Header';
+import Posts from '../containers/Posts';
 
 const API_URL = process.env.REACT_APP_API_URL
 
