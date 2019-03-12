@@ -5,6 +5,7 @@ import App from './containers/App';
 import registerServiceWorker from './registerServiceWorker';
 import store from './store.js';
 
+debugger;
 console.log(store)
 
 ReactDOM.render(
