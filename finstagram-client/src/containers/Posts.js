@@ -9,7 +9,7 @@ class Posts extends Component {
     return (
       <div className="PostsContainer">
         <h1>Posts</h1>
-        {this.props.posts.map(post => <PostCard key={post.id} post={post} />)}
+        
         <PostForm />
       </div>
     )
