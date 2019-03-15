@@ -7,6 +7,7 @@ import Signup from './containers/Signup'
 export default (
   <BrowserRouter>
     <Switch id='routes'>
+      <Route exact path='/' render={ () =>  <Redirect to="/login"/> }/>
       <Route path='/signup' component={ () => loggedIn() ? <Redirect to="/"/> : <Signup/> }/>
       <Route path='/login' component={ () => loggedIn() ? <Redirect to="/"/> : <Login/> }/>
       <Route path='/logout' component={ () => logout() }/>
