@@ -27,7 +27,7 @@ class Api::PostsController < ApplicationController
     end
   end
 
-  def desroy
+  def destroy
     if @post.destroy
       render status: 204
     else
@@ -42,7 +42,7 @@ class Api::PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:name, :img_url, :comment)
+      params.require(:post).permit(:img_url, :comment)
     end
 
 end
