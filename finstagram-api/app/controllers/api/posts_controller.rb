@@ -42,7 +42,7 @@ class Api::PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:img_url, :comment)
+      params.require(:post).permit(:img_url, :caption)
     end
 
 end
