@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
+import { withRouter, Link } from 'react-router-dom'
 
 class Login extends Component {
+  state = {
+      username: 'demo',
+      password: 'password'
+    }
+
   render() {
     return (
       <>
@@ -10,6 +16,7 @@ class Login extends Component {
           <input type='password' name="password" placeholder="Password" /><br/>
           <button type="submit">Login</button>
         </form>
+        <Link to='/signup'>Sign Up</Link>
       </>
     )
   }
