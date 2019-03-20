@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:3005/api/v1'
+const baseUrl = 'http://localhost:3001/api'
 
 export const loginUser = (user, callback) => {
   let data = {
