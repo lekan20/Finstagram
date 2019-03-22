@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:3001/api/'
+const baseUrl = 'http://localhost:3001/api'
 
 export const fetchTodos = () => {
   let data = {
@@ -11,7 +11,7 @@ export const fetchTodos = () => {
   }
 
   return dispatch => {
-    fetch(`${ baseUrl }/todos`, data)
+    fetch(`${ baseUrl }/posts`, data)
       .then(response => response.json())
       .then(todos => dispatch({
           type: 'FETCH_TODOS',

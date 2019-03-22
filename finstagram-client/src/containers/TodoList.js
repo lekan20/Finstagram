@@ -22,7 +22,7 @@ class TodoList extends Component {
         <div>{ user.firstname } { user.lastname }</div>
         <h1>To Do</h1>
         <TodoForm/>
-        { todos.map(todo => <Todo key={ todo.id } todo={ todo } deleteTodo={ this.props.deleteTodo } deleteSubTodo={ this.props.deleteSubTodo }/>) }
+        { todos.map(todo => <Todo key={ todo.id } todo={ todo } deleteTodo={ this.props.deleteTodo } />) }
       </div>
     )
   }
