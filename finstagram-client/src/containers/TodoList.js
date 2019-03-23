@@ -32,7 +32,7 @@ class TodoList extends Component {
 const mapStateToProps = state => {
   return {
     user: state.user.current,
-    posts: state.posts.all
+    posts: state.post.all
   }
 }
 
