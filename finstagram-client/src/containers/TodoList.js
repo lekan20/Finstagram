@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import { fetchUser } from '../actions/userActions'
-import { fetchPosts, deleteTodo } from '../actions/todoActions'
+import { fetchPosts, deleteTodo } from '../actions/postActions'
 
 import Post from '../components/Todo'
 import TodoForm from '../components/TodoForm'
