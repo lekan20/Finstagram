@@ -1,10 +1,9 @@
 import React from 'react'
 
-const Todo = ({ todo: { id, title, description, sub_todos }, deleteTodo, deleteSubTodo }) =>
+const Todo = ({ todo: { id, user_id, img_url, caption }, deleteTodo, deleteSubTodo }) =>
   <div>
-    <h1>{ title }</h1>
-    <p>{ description }<button onClick={ () => deleteTodo(id) }>Complete Todo</button></p>
-
+     <img src={img_url} />
+    <p>{ caption }</p>
   </div>
 
 export default Todo
