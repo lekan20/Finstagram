@@ -8,6 +8,8 @@ import { fetchPosts, deleteTodo } from '../actions/todoActions'
 import Post from '../components/Todo'
 import TodoForm from '../components/TodoForm'
 
+import Header from '../components/Header'
+
 class TodoList extends Component {
   componentWillMount() {
     this.props.fetchUser()
@@ -19,8 +21,7 @@ class TodoList extends Component {
 
     return (
       <div>
-        <header />
-        <h1>Feed</h1>
+        <Header />
         <TodoForm/>
         { posts.map(post => <Post key={ post.id } post={ post } deleteTodo={ this.props.deleteTodo } />) }
       </div>
@@ -31,7 +32,7 @@ class TodoList extends Component {
 const mapStateToProps = state => {
   return {
     user: state.user.current,
-    posts: state.todos.all
+    posts: state.posts.all
   }
 }
 
