@@ -30,18 +30,18 @@ class TodoForm extends Component {
 
     this.props.createTodo(this.state)
     this.setState({
-      title: "",
-      description: ""
+      img_url: "",
+      caption: ""
     })
   }
 
   render() {
-    const { title, description } = this.state
+    const { img_url, caption } = this.state
 
     return (
       <form onSubmit={ this.onSubmit }>
-        <input name="title" placeholder="Title" value={ title } onChange={ this.onChange }/>
-        <input name="description" placeholder="Description" value={ description } onChange={ this.onChange }/>
+        <input name="img_url" placeholder="Image" value={ img_url } onChange={ this.onChange }/>
+        <input name="caption" placeholder="Caption" value={ caption } onChange={ this.onChange }/>
         <button type="submit">Add</button>
       </form>
     )

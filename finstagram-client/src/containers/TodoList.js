@@ -3,26 +3,26 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import { fetchUser } from '../actions/userActions'
-import { fetchTodos, deleteTodo } from '../actions/todoActions'
+import { fetchPosts, deleteTodo } from '../actions/todoActions'
 
-import Todo from '../components/Todo'
+import Post from '../components/Todo'
 import TodoForm from '../components/TodoForm'
 
 class TodoList extends Component {
   componentWillMount() {
     this.props.fetchUser()
-    this.props.fetchTodos()
+    this.props.fetchPosts()
   }
 
   render() {
-    const { user, todos } = this.props
+    const { user, posts } = this.props
 
     return (
       <div>
-        <div>{ user.firstname } { user.lastname }</div>
-        <h1>To Do</h1>
+        <header />
+        <h1>Feed</h1>
         <TodoForm/>
-        { todos.map(todo => <Todo key={ todo.id } todo={ todo } deleteTodo={ this.props.deleteTodo } />) }
+        { posts.map(post => <Post key={ post.id } post={ post } deleteTodo={ this.props.deleteTodo } />) }
       </div>
     )
   }
@@ -31,13 +31,13 @@ class TodoList extends Component {
 const mapStateToProps = state => {
   return {
     user: state.user.current,
-    todos: state.todos.all
+    posts: state.todos.all
   }
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   fetchUser,
-  fetchTodos,
+  fetchPosts,
   deleteTodo
 }, dispatch)
 

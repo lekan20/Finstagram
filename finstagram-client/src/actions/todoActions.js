@@ -1,6 +1,6 @@
 const baseUrl = 'http://localhost:3001/api'
 
-export const fetchTodos = () => {
+export const fetchPosts = () => {
   let data = {
     method: 'GET',
     headers: {
@@ -13,9 +13,9 @@ export const fetchTodos = () => {
   return dispatch => {
     fetch(`${ baseUrl }/posts`, data)
       .then(response => response.json())
-      .then(todos => dispatch({
-          type: 'FETCH_TODOS',
-          payload: todos
+      .then(posts => dispatch({
+          type: 'FETCH_POSTS',
+          payload: posts
       }))
       .catch(err => err)
   }
