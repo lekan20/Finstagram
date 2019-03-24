@@ -4,7 +4,8 @@ class Api::PostsController < ApplicationController
   end
 
   def create
-    post = get_current_user.posts.build(post_params)
+    post = Post.new(todo_params)
+    post.user_id = get_current_user.id
     post.save
 
     render json: post
