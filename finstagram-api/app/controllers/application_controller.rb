@@ -10,7 +10,7 @@ class ApplicationController < ActionController::API
       user_info = Auth.decode(jwt_token)
       user ||= User.find(user_info['user_id'])
     end
-
+    
     user
   end
 end
