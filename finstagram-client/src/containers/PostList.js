@@ -23,7 +23,7 @@ class PostList extends Component {
       <div>
         <Header />
         <PostForm/>
-        { posts.map(post => <Post key={ post.id } post={ post } deleteTodo={ this.props.deleteTodo } />) }
+        { posts.map(post => <Post key={ post.id } post={ post } />) }
       </div>
     )
   }
