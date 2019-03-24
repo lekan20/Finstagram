@@ -13,6 +13,11 @@ end
 def truncate_database
   User.delete_all
   Post.delete_all
+
+  # these methods reset the ID back to 0 if you are using PostgreSQL database
+  ActiveRecord::Base.connection.reset_pk_sequence!('users')
+  ActiveRecord::Base.connection.reset_pk_sequence!('posts')
+
 end
 
 def main

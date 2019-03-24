@@ -7,7 +7,9 @@ class Api::PostsController < ApplicationController
   end
 
   def create
+    binding.pry
     post = Post.new(post_params)
+    post.user_id = user_id
     if post.save
       render json: post
     else
@@ -42,7 +44,7 @@ class Api::PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:img_url, :caption)
+      params.require(:todo).permit(:img_url, :caption)
     end
 
 end
