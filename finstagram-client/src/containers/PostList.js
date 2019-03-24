@@ -5,12 +5,12 @@ import { connect } from 'react-redux'
 import { fetchUser } from '../actions/userActions'
 import { fetchPosts, deleteTodo } from '../actions/postActions'
 
-import Post from '../components/Todo'
-import TodoForm from '../components/TodoForm'
+import Post from '../components/Post'
+import PostForm from '../components/PostForm'
 
 import Header from '../components/Header'
 
-class TodoList extends Component {
+class PostList extends Component {
   componentWillMount() {
     this.props.fetchUser()
     this.props.fetchPosts()
@@ -22,7 +22,7 @@ class TodoList extends Component {
     return (
       <div>
         <Header />
-        <TodoForm/>
+        <PostForm/>
         { posts.map(post => <Post key={ post.id } post={ post } deleteTodo={ this.props.deleteTodo } />) }
       </div>
     )
@@ -42,4 +42,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   deleteTodo
 }, dispatch)
 
-export default connect(mapStateToProps, mapDispatchToProps)(TodoList)
+export default connect(mapStateToProps, mapDispatchToProps)(PostList)

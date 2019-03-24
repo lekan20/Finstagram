@@ -21,7 +21,7 @@ export const fetchPosts = () => {
   }
 }
 
-export const createTodo = todo => {
+export const createPost = post => {
   let data = {
     method: 'POST',
     headers: {
@@ -29,15 +29,15 @@ export const createTodo = todo => {
       'Content-Type': 'application/json',
       'Authorization': sessionStorage.jwt
     },
-    body: JSON.stringify({ todo })
+    body: JSON.stringify({ post })
   }
 
   return dispatch => {
-    fetch(`${ baseUrl }/todos`, data)
+    fetch(`${ baseUrl }/posts`, data)
       .then(response => response.json())
-      .then(todo => dispatch({
-        type: 'CREATE_TODO',
-        payload: todo
+      .then(post => dispatch({
+        type: 'CREATE_POST',
+        payload: post
       }))
       .catch(err => err)
   }

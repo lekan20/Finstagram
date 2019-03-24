@@ -2,15 +2,15 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-import { createTodo } from '../actions/postActions'
+import { createPost } from '../actions/postActions'
 
-class TodoForm extends Component {
+class PostForm extends Component {
   constructor() {
     super()
 
     this.state = {
-      title: "",
-      description: ""
+      img_url: "",
+      caption: ""
     }
 
     this.onChange = this.onChange.bind(this)
@@ -28,7 +28,7 @@ class TodoForm extends Component {
   onSubmit(e) {
     e.preventDefault()
 
-    this.props.createTodo(this.state)
+    this.props.createPost(this.state)
     this.setState({
       img_url: "",
       caption: ""
@@ -49,7 +49,7 @@ class TodoForm extends Component {
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  createTodo
+  createPost
 }, dispatch)
 
-export default connect(null, mapDispatchToProps)(TodoForm)
+export default connect(null, mapDispatchToProps)(PostForm)
