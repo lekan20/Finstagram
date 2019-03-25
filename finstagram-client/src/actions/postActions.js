@@ -42,24 +42,3 @@ export const createPost = post => {
       .catch(err => err)
   }
 }
-
-export const deleteTodo = id => {
-  let data = {
-    method: 'DELETE',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-      'Authorization': sessionStorage.jwt
-    }
-  }
-
-  return dispatch => {
-    fetch(`${ baseUrl }/todos/${ id }`, data)
-      .then(response => response.json())
-      .then(todo => dispatch({
-        type: 'DELETE_TODO',
-        payload: todo
-      }))
-      .catch(err => err)
-  }
-}

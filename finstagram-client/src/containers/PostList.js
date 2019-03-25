@@ -39,7 +39,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => bindActionCreators({
   fetchUser,
   fetchPosts,
-  deleteTodo
 }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostList)
