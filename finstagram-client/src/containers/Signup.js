@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { withRouter, Link } from 'react-router-dom'
+import Header from '../components/Header'
 
 import { signupUser } from '../actions/userActions'
 
@@ -41,6 +42,7 @@ class Signup extends Component {
 
     return (
       <>
+        <Header />
         <h1>Sign Up</h1>
         <form onSubmit={ this.onSubmit }>
           <input name="username" placeholder="Username" value={ username } onChange={ this.onChange }/><br/>
@@ -50,7 +52,7 @@ class Signup extends Component {
           <input name="lastname" placeholder="Lastname" value={ lastname } onChange={ this.onChange }/><br/>
           <button type="submit">Signup</button>
         </form>
-        <Link to='/login'>Log In</Link>
+        <br/><Link to='/login'>Log In</Link>
       </>
     )
   }

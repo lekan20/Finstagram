@@ -1,0 +1,22 @@
+{
+  "name": "finstagram",
+  "version": "1.0.0",
+  "description": "final project",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lekan20/Finstagram.git"
+  },
+  "keywords": [
+    "finstagram"
+  ],
+  "author": "Lekan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lekan20/Finstagram/issues"
+  },
+  "homepage": "https://github.com/lekan20/Finstagram#readme"
+}

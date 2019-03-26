@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { withRouter, Link } from 'react-router-dom'
+import Header from '../components/Header'
 
 import { loginUser } from '../actions/userActions'
+
 
 class Login extends Component {
   constructor() {
@@ -38,13 +40,14 @@ class Login extends Component {
 
     return (
       <>
+        <Header />
         <h1>Log In</h1>
         <form onSubmit={ this.onSubmit }>
           <input name="username" placeholder="Username" value={ username } onChange={ this.onChange }/><br/>
           <input type='password' name="password" placeholder="Password" value={ password } onChange={ this.onChange }/><br/>
           <button type="submit">Login</button>
         </form>
-        <Link to='/signup'>Sign Up</Link>
+        <br/><Link to='/signup'>Sign Up</Link>
       </>
     )
   }
