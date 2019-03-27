@@ -1,7 +1,7 @@
 const baseUrl = 'http://localhost:3001/api'
 
 export const fetchPosts = () => {
-  let data = {
+  let request = {
     method: 'GET',
     headers: {
       'Accept': 'application/json',
@@ -11,7 +11,7 @@ export const fetchPosts = () => {
   }
 
   return dispatch => {
-    fetch(`${ baseUrl }/posts`, data)
+    fetch(`${ baseUrl }/posts`, request)
       .then(response => response.json())
       .then(posts => dispatch({
           type: 'FETCH_POSTS',
@@ -22,7 +22,7 @@ export const fetchPosts = () => {
 }
 
 export const createPost = post => {
-  let data = {
+  let request = {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -33,7 +33,7 @@ export const createPost = post => {
   }
 
   return dispatch => {
-    fetch(`${ baseUrl }/posts`, data)
+    fetch(`${ baseUrl }/posts`, request)
       .then(response => response.json())
       .then(post => dispatch({
         type: 'CREATE_POST',

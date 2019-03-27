@@ -1,7 +1,7 @@
 const baseUrl = 'http://localhost:3001/api'
 
 export const loginUser = (user, callback) => {
-  let data = {
+  let request = {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -11,7 +11,7 @@ export const loginUser = (user, callback) => {
   }
 
   return dispatch => {
-    fetch(`${ baseUrl }/login`, data)
+    fetch(`${ baseUrl }/login`, request)
       .then(response => response.json())
       .then(user => {
         sessionStorage.setItem('jwt', user.jwt)
@@ -28,7 +28,7 @@ export const loginUser = (user, callback) => {
 }
 
 export const signupUser = (user, callback) => {
-  let data = {
+  let request = {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -38,7 +38,7 @@ export const signupUser = (user, callback) => {
   }
 
   return dispatch => {
-    fetch(`${ baseUrl }/signup`, data)
+    fetch(`${ baseUrl }/signup`, request)
       .then(response => response.json())
       .then(user => {
         sessionStorage.setItem('jwt', user.jwt)
@@ -55,7 +55,7 @@ export const signupUser = (user, callback) => {
 }
 
 export const fetchUser = () => {
-  let data = {
+  let request = {
     method: 'GET',
     headers: {
       'Accept': 'application/json',
@@ -65,7 +65,7 @@ export const fetchUser = () => {
   }
 
   return dispatch => {
-    fetch(`${ baseUrl }/user`, data)
+    fetch(`${ baseUrl }/user`, request)
       .then(response => response.json())
       .then(user => {
         dispatch({
@@ -78,7 +78,7 @@ export const fetchUser = () => {
 }
 
 export const deleteUser = id => {
-  let data = {
+  let request = {
     method: 'DELETE',
     headers: {
       'Accept': 'application/json',
@@ -87,7 +87,7 @@ export const deleteUser = id => {
   }
 
   return dispatch => {
-    fetch(`${ baseUrl }/users/${ id }`, data)
+    fetch(`${ baseUrl }/users/${ id }`, request)
       .then(response => response.json())
       .then(user => dispatch({
         type: 'DELETE_TODO',

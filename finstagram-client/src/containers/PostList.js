@@ -11,7 +11,7 @@ import PostForm from '../components/PostForm'
 import Header from '../components/Header'
 
 class PostList extends Component {
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchUser()
     this.props.fetchPosts()
   }
@@ -22,7 +22,7 @@ class PostList extends Component {
     return (
       <div>
         <Header />
-        <PostForm/>
+        <PostForm/><br/>
         { posts.map(post => <Post key={ post.id } post={ post } />) }
       </div>
     )
@@ -31,7 +31,6 @@ class PostList extends Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.user.current,
     posts: state.post.all
   }
 }

@@ -9,8 +9,6 @@ export default function postsReducer(state = initialState, action) {
       return { ...state, all: action.payload }
     case 'CREATE_POST':
       return { ...state, all: [...state.all, action.payload] }
-    case 'DELETE_POST':
-      return { ...state, all: state.all.filter(todo => todo.id !== action.payload.id) }
     default: return state
   }
 }
