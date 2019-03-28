@@ -12,7 +12,6 @@ import Header from '../components/Header'
 
 class PostList extends Component {
   componentDidMount() {
-    this.props.fetchUser()
     this.props.fetchPosts()
   }
 
@@ -36,7 +35,6 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  fetchUser,
   fetchPosts,
 }, dispatch)
 
