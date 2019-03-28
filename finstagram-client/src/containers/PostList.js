@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-import { fetchUser } from '../actions/userActions'
 import { fetchPosts } from '../actions/postActions'
 
 import Post from '../components/Post'
@@ -16,7 +15,7 @@ class PostList extends Component {
   }
 
   render() {
-    const { user, posts } = this.props
+    const { posts } = this.props
 
     return (
       <div>
