@@ -22,6 +22,7 @@ export const fetchPosts = () => {
 }
 
 export const createPost = post => {
+  console.log('C')
   let request = {
     method: 'POST',
     headers: {
@@ -35,10 +36,13 @@ export const createPost = post => {
   return dispatch => {
     fetch(`${ baseUrl }/posts`, request)
       .then(response => response.json())
-      .then(post => dispatch({
+      .then(post => {
+        console.log('D')
+        dispatch({
         type: 'CREATE_POST',
         payload: post
-      }))
+      })})
       .catch(err => err)
   }
+  console.log('E')
 }

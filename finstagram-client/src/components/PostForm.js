@@ -27,8 +27,9 @@ class PostForm extends Component {
 
   onSubmit(e) {
     e.preventDefault()
-
+    console.log('A')
     this.props.createPost(this.state)
+    console.log('B')
     this.setState({
       img_url: "",
       caption: ""

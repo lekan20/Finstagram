@@ -1,7 +1,8 @@
 import React from 'react'
 import  "./Post.css";
+import Like from "./Like.js"
 
-const Post = ({ post: { id, img_url, caption }, deleteTodo }) =>
+const Post = ({ post: { id, img_url, caption }}) =>
   <article className="Post">
     <header>
       <div className="Post-user">
@@ -16,7 +17,7 @@ const Post = ({ post: { id, img_url, caption }, deleteTodo }) =>
       </div>
     </div>
     <div className="Post-caption">
-      <span> </span> { caption }
+      <span> </span> { caption } <Like/>
     </div>
   </article>
 
