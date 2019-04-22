@@ -34,6 +34,7 @@ export const createPost = post => {
   }
 
   return dispatch => {
+    console.log('F')
     fetch(`${ baseUrl }/posts`, request)
       .then(response => response.json())
       .then(post => {

@@ -7,9 +7,11 @@ class Like extends Component {
     this.state = {count: 0}
 }
 handleClick = () => {
-  this.setState(({ count }) => ({
-    count: count + 1
-  }));
+  // this.setState(({ count }) => ({
+  //   count: count + 1
+  // }));
+  this.state.count += 1
+  console.log(this.state);
 };
 
   render() {
